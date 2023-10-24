@@ -1,5 +1,6 @@
+const table = []
 
-const hash = (value) => {
+const _hash = (value) => {
   if (value === null) {
     return 0;
   }
@@ -15,5 +16,12 @@ const hash = (value) => {
     hash = hash & hash; // Convert to 32bit integer
   
   }
+  return hash;
+}
 
+const setTable = (value) => {
+  const hash = _hash(value);
+  table[hash] = value;
+  
+  return table;
 }
