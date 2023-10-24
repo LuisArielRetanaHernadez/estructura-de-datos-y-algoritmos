@@ -45,3 +45,17 @@ const getValue = (value) => {
 }
 
 console.log(getValue('avaja'))
+
+const getKey = (value) => {
+
+  const hash = _hash(value);
+
+  if (!table[hash]) {
+    return null;
+  }
+
+  return hash;
+
+}
+
+getKey('python'); // key
