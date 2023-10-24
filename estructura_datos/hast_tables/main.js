@@ -22,6 +22,24 @@ const _hash = (value) => {
 const setTable = (value) => {
   const hash = _hash(value);
   table[hash] = value;
-  
+
   return table;
 }
+
+setTable('python');
+setTable('java');
+setTable('javascript');
+setTable('Java')
+setTable('avaj');
+setTable('jvaa')
+setTable('c++');
+
+const getValue = (value) => {
+  const hash = _hash(value);
+  if (!table[hash]) {
+    return null;
+  }
+  return table[hash];
+}
+
+console.log(getValue('avaja'))
