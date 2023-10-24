@@ -36,9 +36,11 @@ setTable('c++');
 
 const getValue = (value) => {
   const hash = _hash(value);
+  
   if (!table[hash]) {
     return null;
   }
+
   return table[hash];
 }
 
