@@ -1,7 +1,7 @@
 class Node {
   constructor(value) {
     this.value = value;
-    this.next = null;
+    this.prev = null;
   }
 }
 
@@ -23,4 +23,25 @@ class Stack {
     }
     this.length++;
   }
+
+  dequeue() {
+    if (!this.front) return null;
+    if (this.front === this.rear) {
+      this.rear = null;
+      this.front = null;
+      this.length = 0;
+      return null
+    }
+    this.front = this.front.prev;
+    this.length--;
+  }
 }
+
+const queue = new Stack();
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+queue.dequeue()
+queue.dequeue()
+queue.dequeue()
+console.log(queue)
