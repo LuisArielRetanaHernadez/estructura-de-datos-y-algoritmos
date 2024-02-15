@@ -31,12 +31,26 @@ class LinkedList {
     this.tail = node
     this.tail.next = null
   }
+
+  getValues() {
+    if (this.head === null) return null
+
+    const valuesNodes = []
+    let currentNode = this.head
+
+    while(currentNode.next !== null) {
+      currentNode = currentNode.next
+      valuesNodes.push(currentNode.value)
+    }
+
+    return valuesNodes
+  }
 }
 
 const nodes = new LinkedList()
 nodes.add(1)
 nodes.add(2)
 nodes.add(3)
-nodes.pop()
+nodes.getValues()
 
 console.log(nodes)
